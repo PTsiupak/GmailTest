@@ -10,10 +10,10 @@ public class LoginPage extends PageObject {
         super();
     }
 
-    @FindBy(id = "identifierId")
+    @FindBy(xpath = "//div/input[@id='identifierId']")
     private WebElement loginInput;
 
-    @FindBy(name = "password")
+    @FindBy(xpath = "//div/input[@type='password']")
     private WebElement passwordInput;
 
     @FindBy(xpath = "//content[@class='CwaK9']/span[1]")
@@ -26,7 +26,7 @@ public class LoginPage extends PageObject {
 
     public void typePasswordAndSubmit(String password) {
         passwordInput.sendKeys(password);
-        //WebDriverSingleton.wait();
+        WebDriverSingleton.wait("//content[@class='CwaK9']/span[1]");
         nextButton.click();
     }
 }

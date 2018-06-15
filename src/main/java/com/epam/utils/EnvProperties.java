@@ -14,7 +14,7 @@ public class EnvProperties {
     public EnvProperties() {
         properties = new Properties();
         try {
-            properties.load(new FileInputStream(new File("src/main/resources/data.properties")));
+            properties.load(new FileInputStream(new File("src\\main\\resources\\data.properties")));
         } catch (IOException e) {
             LOG.error("No property file");
             e.printStackTrace();
