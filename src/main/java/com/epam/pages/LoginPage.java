@@ -10,23 +10,22 @@ public class LoginPage extends PageObject {
         super();
     }
 
-    @FindBy(xpath = "//div/input[@id='identifierId']")
+    @FindBy(xpath = "//input[@type='email']")
     private WebElement loginInput;
 
-    @FindBy(xpath = "//div/input[@type='password']")
+    @FindBy(xpath = "//input[@type='password']")
     private WebElement passwordInput;
 
-    @FindBy(xpath = "//content[@class='CwaK9']/span[1]")
+    @FindBy(xpath = "//input[@value='Log In']")
     private WebElement nextButton;
 
-    public void typeLoginAndSubmit(String login) {
+    public void typeLogin(String login) {
         loginInput.sendKeys(login);
-        nextButton.click();
     }
 
-    public void typePasswordAndSubmit(String password) {
+    public void typePassword(String password) {
         passwordInput.sendKeys(password);
-        WebDriverSingleton.wait("//content[@class='CwaK9']/span[1]");
+        WebDriverSingleton.wait("//input[@value='Log In']");
         nextButton.click();
     }
 }
